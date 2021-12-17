@@ -10,13 +10,13 @@
     <title>Document</title>
     <style>
         body {
-            margin-left: 15%;
-            margin-right: 15%;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
-        .grop_hos:hover {
+        .card:hover {
             box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
-            padding: 2%;
+            /* padding: 2%; */
             border-radius: 16px;
             /* background-color: rgba(240, 240, 240, 0.664); */
 
@@ -136,8 +136,12 @@
                 font-size: small !important;
             }
 
-            .logo {
-                width: 90px !important;
+            
+            .reccomend{
+                display: none;
+            }
+            .show2{
+                display: none;
             }
 
         }
@@ -178,7 +182,10 @@
             }
 
             .logo {
-                width: 90px !important;
+                width: 60px !important;
+            }
+            .img-show{
+                display: none;
             }
         }
 
@@ -204,15 +211,22 @@
             }
 
             .logo {
-                width: 90px !important;
+                width: 65px !important;
             }
+            .show2{
+                display: none;
+            }
+
+            
         }
 
         .menu-icon-section {
-            display: grid;
+            display: flex;
+            justify-content: center;
+            /* display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-            /* grid-column-gap: 10px; */
-            margin: 0 !important;
+            grid-column-gap: 10px;
+            margin: 0 !important; */
 
 
         }
@@ -220,19 +234,24 @@
 
         @media screen and (max-width: 900px) {
             .menu-icon-section {
-                width: 100%;
+                /* width: 100%;
                 grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-                /* grid-column-gap: 10px; */
-                padding: 0 10 px;
+                grid-column-gap: 10px;
+                padding: 0 10 px; */
             }
+            .img-show {
+                width: 100% !important;
+            }
+           
+            
         }
 
         @media screen and (max-width: 375px) {
             .menu-icon-section {
-                width: 100%;
+                /* width: 100%;
                 grid-template-columns: 1fr 1fr 1fr;
-                /* grid-column-gap: 10px; */
-                padding: 0 10px;
+                grid-column-gap: 10px;
+                padding: 0 10px; */
 
             }
 
@@ -240,6 +259,9 @@
                 justify-self: center;
                 align-self: center;
 
+            }
+            .reccomend{
+                display: none;
             }
         }
 
@@ -250,37 +272,37 @@
             max-width: 60%;
             justify-content: center;
 
-            /* width: 70%; */
-            &:last-child:nth-child(3n - 1) {
-                grid-column-end: -2;
-            }
-
-            &:nth-last-child(2):nth-child(3n + 1) {
-                grid-column-end: 4;
-            }
+            
         }
 
         .img_bt:hover {
             transform: scale(1.1);
             transition: .1s;
+            filter: drop-shadow(0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.137));
+        }
+
+        .img-show:hover {
+            transform: scale(1.1);
+            transition: .1s;
+            filter: drop-shadow(0.35rem 0.35rem 0.25rem rgba(0, 0, 0, 0.137));
 
         }
 
-        #elementClicked1 {
-            position: relative;
+        .card_img_show {
+            display: flex;
+            gap: 10px;
+            box-sizing: border-box;
+            
         }
 
-        #elementClicked1.on:after {
-            content: "Hide";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: white;
-            text-decoration: underline;
-
+        @media screen and (max-width: 1144px) {
+            
+            .reccomend{
+                display: none;
+            }
         }
+
+
         
     </style>
 </head>
@@ -364,7 +386,7 @@
 
     <!-- data -->
     <script>
-        let requestURL = "https://raw.githubusercontent.com/Mymieeye/review/main/category.json";
+        let requestURL = "category.json";
         let request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (request.readyState == 4 && request.status == 200) {
@@ -402,7 +424,7 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
@@ -414,7 +436,7 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
                     i_image.setAttribute("style", ' width: 120px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
@@ -422,7 +444,7 @@
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -452,7 +474,67 @@
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
                     count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -460,6 +542,7 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);

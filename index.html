@@ -339,18 +339,18 @@
     <div class="wrapper  justify-content-center">
         <div class="menu-icon-section ">
 
-            <a href="#health" class="box text-center"><img src="img/health.png"
+            <a href="index.html#health" class="box text-center"><img src="img/health.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="health button" /></a>
-            <a href="#dental" class="box text-center"><img src="img/dental.png"
+            <a href="index.html#dental" class="box text-center"><img src="img/dental.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="dental button" /></a>
-            <a href="#beauty" class="box text-center"><img src="img/beauty.png"
+            <a href="index.html#beauty" class="box text-center"><img src="img/beauty.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="beauty button" /></a>
 
-            <a href="#pets" class="box text-center" style="align-self: center;"><img src="img/pet.png"
+            <a href="index.html#pets" class="box text-center" style="align-self: center;"><img src="img/pet.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
                     alt="pet button" /></a>
 
-            <a href="#product" class="box text-center" style="align-self: center;"><img src="img/product.png"
+            <a href="index.html#product" class="box text-center" style="align-self: center;"><img src="img/product.png"
                     class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
                     alt="product button" /></a>
 
@@ -678,11 +678,9 @@
                     div_card.setAttribute("class", "card m-5 border-0  ");
                     div_card.setAttribute("style", "");
 
-                    //row1
+                    //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
-
-
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
@@ -694,16 +692,18 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
                     i_image.setAttribute("style", ' width: 120px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
+
 
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
 
 
                     // card text
@@ -730,10 +730,9 @@
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
                     count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
-
                     //row2
                     var div_row2 = document.createElement("div");
-                    div_row2.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
                     div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
@@ -741,28 +740,57 @@
                     var div_col4 = document.createElement("div");
                     div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", ' img-fluid  shadow-sm logo pt-2');
-                    i_image2.setAttribute("style", ' width: 120px;');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
-                    // var recomm = document.createElement("span");
-                    // recomm.setAttribute("class", "");
-                    // recomm.innerHTML = 'รีวิวแนะนำ';
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
 
                     // add img in col1
-                    // div_col2.appendChild(recomm);
-                    div_col2.appendChild(i_image2);
+                    div_img_show.appendChild(recomm);
 
                     // add col1 in row
                     div_row2.appendChild(div_col3);
                     div_row2.appendChild(div_col4);
-
-
-                    // add col1 in row
-                    div_row.appendChild(div_col);
-
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -771,8 +799,10 @@
                     // add row in div cover
                     div_card.appendChild(div_row);
                     div_card.appendChild(div_row2);
+
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_2 < 6) {
                         var parent = document.getElementById("example_content2");
@@ -795,7 +825,7 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
@@ -807,7 +837,7 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
                     i_image.setAttribute("style", ' width: 120px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
@@ -815,7 +845,7 @@
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -845,7 +875,67 @@
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
                     count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -853,9 +943,11 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_3 < 6) {
                         var parent = document.getElementById("example_content3");
@@ -878,7 +970,7 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
@@ -890,7 +982,7 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
                     i_image.setAttribute("style", ' width: 120px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
@@ -898,7 +990,7 @@
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -928,7 +1020,67 @@
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
                     count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -936,9 +1088,11 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_4 < 6) {
                         var parent = document.getElementById("example_content4");
@@ -961,7 +1115,7 @@
 
                     //row
                     var div_row = document.createElement("div");
-                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+                    div_row.setAttribute("class", "row g-0 grop_hos ml-2");
 
                     //col1
                     var div_col = document.createElement("div");
@@ -973,7 +1127,7 @@
                     //img logo
                     var i_image = document.createElement("img");
                     i_image.src = data[i].logo;
-                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("class", 'img-fluid mx-auto rounded-circle shadow-sm logo');
                     i_image.setAttribute("style", ' width: 120px;');
                     // i_image.setAttribute("src", `${data[i].image}`);
 
@@ -981,7 +1135,7 @@
                     // add img in col1
                     div_col.appendChild(i_image);
 
-                    //col2 des
+                    //col2 
                     var div_col2 = document.createElement("div");
                     div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
 
@@ -1011,7 +1165,67 @@
                     var count_review = document.createElement("span");
                     count_review.setAttribute("class", "");
                     count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+                    //row2
+                    var div_row2 = document.createElement("div");
+                    div_row2.setAttribute("class", "row g-0 grop_hos ");
+                    //col1 of row2
+                    var div_col3 = document.createElement("div");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    //col of row2
+                    var div_col4 = document.createElement("div");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
 
+                    // div img show
+                    var div_img_show = document.createElement("div");
+                    div_img_show.setAttribute("class", "card_img_show m-3");
+                    div_col2.appendChild(div_img_show);
+
+                    // a cover img 1
+                    var a_img2 = document.createElement("a");
+                    a_img2.href = data[i].link1;
+                    a_img2.setAttribute("style", "text-decoration: none; color:black;");
+                    a_img2.target = "_blank";
+
+
+                    //img review
+                    var i_image2 = document.createElement("img");
+                    i_image2.src = data[i].img1;
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("style", ' width: 200px; align-self: center;');
+
+                    a_img2.appendChild(i_image2)
+
+                    div_img_show.appendChild(a_img2);
+
+                    //img review
+                    if (data[i].img2 != "") {
+                        // a cover img 2
+                        var a_img3 = document.createElement("a");
+                        a_img3.href = data[i].link2;
+                        a_img3.setAttribute("style", "text-decoration: none; color:black;");
+                        a_img3.target = "_blank";
+
+                        var i_image3 = document.createElement("img");
+                        i_image3.src = data[i].img2;
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("style", ' width: 200px; align-self: center;');
+                        a_img3.appendChild(i_image3)
+                        // add img in col1
+                        div_img_show.appendChild(a_img3);
+                    }
+
+
+                    var recomm = document.createElement("span");
+                    recomm.setAttribute("class", "reccomend");
+                    recomm.innerHTML = 'ดูเพิ่มเติม';
+                    recomm.setAttribute("style", 'align-self: center;');
+
+                    // add img in col1
+                    div_img_show.appendChild(recomm);
+
+                    // add col1 in row
+                    div_row2.appendChild(div_col3);
+                    div_row2.appendChild(div_col4);
                     // add badges in card txt
                     div_text.appendChild(badge);
                     div_text.appendChild(count_review);
@@ -1019,9 +1233,11 @@
                     div_row.appendChild(div_col2);
                     // add row in div cover
                     div_card.appendChild(div_row);
+                    div_card.appendChild(div_row2);
 
                     // add div cover in link cover
                     a_cover.appendChild(div_card);
+
 
                     if (count_5 < 6) {
                         var parent = document.getElementById("example_content5");
@@ -1030,6 +1246,7 @@
 
                 }
 
+                
             }
         }
 
