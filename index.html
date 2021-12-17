@@ -137,9 +137,7 @@
                 font-size: small !important;
             }
 
-            .logo {
-                width: 90px !important;
-            }
+            
             .reccomend{
                 display: none;
             }
@@ -232,9 +230,11 @@
                 grid-column-gap: 10px;
                 padding: 0 10 px; */
             }
-            .logo {
-                width: 90px !important;
+            .img-show {
+                width: 80% !important;
             }
+           
+            
         }
 
         @media screen and (max-width: 375px) {
@@ -287,25 +287,14 @@
         }
 
         @media screen and (max-width: 1144px) {
-            .img-show {}
+            
+            .reccomend{
+                display: none;
+            }
         }
 
 
-        #elementClicked1 {
-            position: relative;
-        }
-
-        #elementClicked1.on:after {
-            content: "Hide";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: white;
-            text-decoration: underline;
-
-        }
+        
     </style>
 </head>
 
