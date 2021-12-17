@@ -137,12 +137,28 @@
                 font-size: small !important;
             }
 
-            
-            .reccomend{
+
+            .reccomend {
                 display: none;
             }
-            .show2{
+
+            /* .show2 {
                 display: none;
+            } */
+
+            .card_img_show {
+                gap: 10px;
+                height: 95px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                position: relative;
+                left: 0;
+                padding-left: 0px;
+                margin: 0;
+
             }
 
         }
@@ -185,9 +201,10 @@
             .logo {
                 width: 60px !important;
             }
-            .img-show{
+
+            /* .img-show {
                 display: none;
-            }
+            } */
         }
 
         @media only screen and (max-width: 765px) {
@@ -214,11 +231,12 @@
             .logo {
                 width: 65px !important;
             }
-            .show2{
-                display: none;
-            }
 
-            
+            /* .show2 {
+                display: none;
+            } */
+
+
         }
 
         .menu-icon-section {
@@ -240,11 +258,24 @@
                 grid-column-gap: 10px;
                 padding: 0 10 px; */
             }
-            .img-show {
+
+            /* .img-show {
                 width: 90% !important;
+            } */
+            .card_img_show {
+                gap: 10px;
+                height: 125px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                left: 0;
+                /* padding-left: 12px; */
+                margin: 0;
+
             }
-           
-            
+
         }
 
         @media screen and (max-width: 375px) {
@@ -261,12 +292,26 @@
                 align-self: center;
 
             }
-            .reccomend{
-                display: none;
-            }
+
             .logo {
                 width: 50px !important;
             }
+
+            .card_img_show {
+                gap: 10px;
+                height: 95px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+                position: relative;
+                left: 0;
+                padding-left: 0px;
+                margin: 0;
+
+            }
+
         }
 
         .img_bt {
@@ -276,7 +321,7 @@
             max-width: 60%;
             justify-content: center;
 
-            
+
         }
 
         .img_bt:hover {
@@ -294,20 +339,34 @@
 
         .card_img_show {
             display: flex;
-            gap: 10px;
-            box-sizing: border-box;
-            
+            flex-wrap: wrap;
+            justify-content: start;
+
+
         }
+
+
 
         @media screen and (max-width: 1144px) {
-            
-            .reccomend{
+
+            .card_img_show {
+                gap: 10px;
+                height: 125px;
+                overflow-x: scroll;
+                flex-flow: wrap;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                left: 0;
+                margin: 0;
+                justify-content: center;
+
+            }
+            .reccomend {
                 display: none;
             }
+
         }
-
-
-        
     </style>
 </head>
 
@@ -542,7 +601,7 @@
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -593,10 +652,10 @@
                     div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
-                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
                     //col of row2
                     var div_col4 = document.createElement("div");
-                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // div img show
                     var div_img_show = document.createElement("div");
@@ -613,7 +672,7 @@
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
                     i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
                     a_img2.appendChild(i_image2)
@@ -630,7 +689,7 @@
 
                         var i_image3 = document.createElement("img");
                         i_image3.src = data[i].img2;
-                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
                         i_image3.setAttribute("style", ' width: 200px; align-self: center;');
                         a_img3.appendChild(i_image3)
                         // add img in col1
@@ -687,7 +746,7 @@
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -738,10 +797,10 @@
                     div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
-                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
                     //col of row2
                     var div_col4 = document.createElement("div");
-                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // div img show
                     var div_img_show = document.createElement("div");
@@ -758,7 +817,7 @@
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
                     i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
                     a_img2.appendChild(i_image2)
@@ -775,7 +834,7 @@
 
                         var i_image3 = document.createElement("img");
                         i_image3.src = data[i].img2;
-                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
                         i_image3.setAttribute("style", ' width: 200px; align-self: center;');
                         a_img3.appendChild(i_image3)
                         // add img in col1
@@ -832,7 +891,7 @@
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -883,10 +942,10 @@
                     div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
-                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
                     //col of row2
                     var div_col4 = document.createElement("div");
-                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // div img show
                     var div_img_show = document.createElement("div");
@@ -903,7 +962,7 @@
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
                     i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
                     a_img2.appendChild(i_image2)
@@ -920,7 +979,7 @@
 
                         var i_image3 = document.createElement("img");
                         i_image3.src = data[i].img2;
-                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
                         i_image3.setAttribute("style", ' width: 200px; align-self: center;');
                         a_img3.appendChild(i_image3)
                         // add img in col1
@@ -977,7 +1036,7 @@
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -1028,10 +1087,10 @@
                     div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
-                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
                     //col of row2
                     var div_col4 = document.createElement("div");
-                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // div img show
                     var div_img_show = document.createElement("div");
@@ -1048,7 +1107,7 @@
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
                     i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
                     a_img2.appendChild(i_image2)
@@ -1065,7 +1124,7 @@
 
                         var i_image3 = document.createElement("img");
                         i_image3.src = data[i].img2;
-                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
                         i_image3.setAttribute("style", ' width: 200px; align-self: center;');
                         a_img3.appendChild(i_image3)
                         // add img in col1
@@ -1122,7 +1181,7 @@
 
                     //col1
                     var div_col = document.createElement("div");
-                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // add col1 in row
                     div_row.appendChild(div_col);
@@ -1173,10 +1232,10 @@
                     div_row2.setAttribute("class", "row g-0 grop_hos ");
                     //col1 of row2
                     var div_col3 = document.createElement("div");
-                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col3.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
                     //col of row2
                     var div_col4 = document.createElement("div");
-                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+                    div_col4.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-3");
 
                     // div img show
                     var div_img_show = document.createElement("div");
@@ -1193,7 +1252,7 @@
                     //img review
                     var i_image2 = document.createElement("img");
                     i_image2.src = data[i].img1;
-                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm logo mt-2 mr-4');
+                    i_image2.setAttribute("class", 'img-show img-fluid rounded shadow-sm  mt-2 mr-4');
                     i_image2.setAttribute("style", ' width: 200px; align-self: center;');
 
                     a_img2.appendChild(i_image2)
@@ -1210,7 +1269,7 @@
 
                         var i_image3 = document.createElement("img");
                         i_image3.src = data[i].img2;
-                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm logo mt-2 mr-4');
+                        i_image3.setAttribute("class", ' img-show show2 img-fluid rounded shadow-sm  mt-2 mr-4');
                         i_image3.setAttribute("style", ' width: 200px; align-self: center;');
                         a_img3.appendChild(i_image3)
                         // add img in col1
@@ -1249,7 +1308,7 @@
 
                 }
 
-                
+
             }
         }
 
