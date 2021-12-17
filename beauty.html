@@ -1,0 +1,479 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        .grop_hos:hover {
+            box-shadow: rgb(0 0 0 / 6%) 0px 4px 8px;
+            padding: 2%;
+            border-radius: 16px;
+            /* background-color: rgba(240, 240, 240, 0.664); */
+
+        }
+
+        .row li {
+            width: 33%;
+            float: left;
+            padding: 3%;
+        }
+
+        .name:hover {
+            color: 0FB396;
+        }
+
+        button:hover {
+            background-color: 0FB396 !important;
+            color: #fff !important;
+            border-radius: 16px !important;
+        }
+
+        .hos {
+            background-color: 0FB396 !important;
+            color: #fff !important;
+            border-radius: 16px !important;
+        }
+
+        .badge.health {
+            font-size: .83em;
+            color: #012524;
+            background-color: #c2f5e9;
+            margin-right: 2%;
+        }
+
+        .badge.dental {
+            font-size: .83em;
+            color: #04283f;
+            background-color: #d0f0fd;
+            margin-right: 2%;
+        }
+
+        .badge.beauty {
+            font-size: .83em;
+            color: #400832;
+            background-color: #ffdaf6;
+            margin-right: 2%;
+        }
+
+        .badge.pet {
+            font-size: .83em;
+            color: #3b2501;
+            background-color: #ffeab6;
+            margin-right: 2%;
+        }
+
+        .badge.other {
+            font-size: .83em;
+            color: #102046;
+            background-color: #cfdfff;
+            margin-right: 2%;
+        }
+
+        span {
+            color: #a5a5a5;
+        }
+
+        .show-content {
+            display: block;
+        }
+
+        .hide-content {
+            display: none;
+        }
+
+        .see-all:hover {
+            background-color: #0fb395ad !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .card-body {
+            padding: 1% !important;
+        }
+
+
+
+        @media only screen and (max-width: 450px) {
+            h4 {
+                font-size: medium !important;
+            }
+
+            body {
+                /* margin-left: 1% !important;
+                margin-right: 1% !important; */
+            }
+
+            span {
+                font-size: small !important;
+            }
+
+            .badge {
+                font-size: 0.7em !important;
+            }
+
+            .row {
+                margin-left: 1%;
+                margin-right: 1%;
+            }
+
+            button {
+                padding: 3% !important;
+                width: 100% !important;
+                margin: 0% !important;
+                margin-bottom: 7% !important;
+                font-size: small !important;
+            }
+
+            .logo {
+                width: 90px !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 396px) {
+            h4 {
+                font-size: small !important;
+            }
+
+            body {
+                margin-left: 6% !important;
+                margin-right: 6% !important;
+            }
+
+            span {
+                font-size: small !important;
+            }
+
+            .badge {
+                font-size: 0.7em !important;
+            }
+
+            .row {
+                margin-left: 1%;
+                margin-right: 1%;
+
+                padding-left: 0% !important;
+                padding-right: 0% !important;
+            }
+
+            .card-body {
+                padding: 2% !important;
+                padding-top: 5% !important;
+            }
+
+            h2 {
+                font-size: x-large;
+            }
+
+            .logo {
+                width: 90px !important;
+            }
+        }
+
+        @media only screen and (max-width: 765px) {
+            .card {
+                margin: 2% !important;
+            }
+
+            /* .card-body {
+                padding: 10% !important;
+            } */
+
+            body {
+                margin-left: 8%;
+                margin-right: 8%;
+            }
+
+            button {
+                padding: 3% !important;
+                width: 100% !important;
+                margin: 0% !important;
+                margin-bottom: 7% !important;
+            }
+
+            .logo {
+                width: 90px !important;
+            }
+        }
+
+        .menu-icon-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            /* grid-column-gap: 10px; */
+            margin: 0 !important;
+
+
+        }
+
+
+        @media screen and (max-width: 900px) {
+            .menu-icon-section {
+                width: 100%;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                /* grid-column-gap: 10px; */
+                padding: 0 10 px;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .menu-icon-section {
+                width: 100%;
+                grid-template-columns: 1fr 1fr 1fr;
+                /* grid-column-gap: 10px; */
+                padding: 0 10px;
+
+            }
+
+            .box {
+                justify-self: center;
+                align-self: center;
+
+            }
+        }
+
+        .img_bt {
+            border: 0 none;
+            display: inline-block;
+            height: auto;
+            max-width: 60%;
+            justify-content: center;
+
+            /* width: 70%; */
+            &:last-child:nth-child(3n - 1) {
+                grid-column-end: -2;
+            }
+
+            &:nth-last-child(2):nth-child(3n + 1) {
+                grid-column-end: 4;
+            }
+        }
+
+        .img_bt:hover {
+            transform: scale(1.1);
+            transition: .1s;
+
+        }
+
+        #elementClicked1 {
+            position: relative;
+        }
+
+        #elementClicked1.on:after {
+            content: "Hide";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            text-decoration: underline;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- content -->
+    <div class="">
+        <!-- title -->
+        <div class="card-body">
+            <h2 class="card-title" style="color: 0FB396;" id="top-header">รวมรีวิว<h2>
+        </div>
+        <!-- button -->
+        <div class="row ">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                <div class="text-center col-lg-12 col-md-12 col-sm-12 col-12 mx-auto">
+                    <a href="index.html" style="text-decoration: none;">
+                        <button type="button" class="btn btn-light rounded btn-md  hos"
+                            style="margin: 5%;  border-radius: 16px; width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามสถานบริการ</button>
+                    </a>
+                    <a href="category.html" style="text-decoration: none;">
+                        <button type="button" class="btn btn-light rounded btn-md cate"
+                            style=" border-radius: 16px;  width: 30%; height: auto !important; border-radius: 16px !important; padding: 1.5%;">รีวิวตามหมวดหมู่</button>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- icon -->
+
+    <!-- <div class="wrapper  justify-content-center">
+        <div class="menu-icon-section ">
+
+            <a href="#health" class="box text-center"><img src="img/health.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="health button" /></a>
+            <a href="#dental" class="box text-center"><img src="img/dental.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="dental button" /></a>
+            <a href="#beauty" class="box text-center"><img src="img/beauty.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%;" alt="beauty button" /></a>
+
+            <a href="#pets" class="box text-center" style="align-self: center;"><img src="img/pet.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                    alt="pet button" /></a>
+
+            <a href="#product" class="box text-center" style="align-self: center;"><img src="img/product.png"
+                    class="img_bt img-responsive inline-block  " style="margin-bottom: 15%; align-self: center;"
+                    alt="product button" /></a>
+
+
+
+        </div>
+    </div> -->
+
+
+
+
+  
+
+    <!-- beauty -->
+    <div class="">
+        <div class="card-body">
+            <h4 class="card-title" id="beauty">รีวิวคลินิกความงาม และร้านเสริมสวย<h4>
+                    <hr>
+                    
+
+        </div>
+    </div>
+    <div id="beauty">
+        <!-- js will add here -->
+        <div class="show-content" id="example_content3">
+        </div>
+       
+    </div>
+
+   
+
+
+    <!-- data -->
+    <script>
+        let requestURL = "https://raw.githubusercontent.com/Mymieeye/review/main/partner.json";
+        let request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+                dataReportStatus(JSON.parse(request.responseText));
+                console.log("yay!!");
+            }
+        };
+        request.open("GET", requestURL, true);
+        request.send();
+
+        // wait til loaded data
+        var jumpID = url.split("#")[1];
+        $.get("content.json", function (data) {
+            document.getElementById(jumpID).scrollIntoView();
+        });
+
+
+        // fetch data
+        function dataReportStatus(data) {
+            
+            for (let i = 0; i < data.length; i++) {
+
+                
+                if (data[i].cat_lv1 == 'Beauty') {
+                   
+                    //link cover
+                    var a_cover = document.createElement("a");
+                    a_cover.href = data[i].Review_URL;
+                    a_cover.setAttribute("style", "text-decoration: none; color:black;");
+
+                    //div cover
+                    var div_card = document.createElement("div");
+                    div_card.setAttribute("class", "card m-5 border-0  ");
+                    div_card.setAttribute("style", "");
+
+                    //row
+                    var div_row = document.createElement("div");
+                    div_row.setAttribute("class", "row g-0 grop_hos p-2");
+
+                    //col1
+                    var div_col = document.createElement("div");
+                    div_col.setAttribute("class", "col-lg-2 col-sm-3 col-md-3 col-4");
+
+                    // add col1 in row
+                    div_row.appendChild(div_col);
+
+                    //img logo
+                    var i_image = document.createElement("img");
+                    i_image.src = data[i].logo;
+                    i_image.setAttribute("class", 'img-fluid rounded-circle shadow-sm logo');
+                    i_image.setAttribute("style", ' width: 120px;');
+                    // i_image.setAttribute("src", `${data[i].image}`);
+
+
+                    // add img in col1
+                    div_col.appendChild(i_image);
+
+                    //col2 des
+                    var div_col2 = document.createElement("div");
+                    div_col2.setAttribute("class", "col-lg-9 col-sm-8 col-md-8 col-8");
+
+
+
+                    // card text
+                    var div_text = document.createElement("div");
+                    div_text.setAttribute("class", "card-body");
+                    div_col2.appendChild(div_text);
+
+
+                    // name
+                    var h3_tag = document.createElement("h4");
+                    h3_tag.setAttribute("class", "card-title name");
+                    h3_tag.innerHTML = `${data[i].Detail}`;
+                    console.log("yaye!!");
+
+                    // add name in card text
+                    div_text.appendChild(h3_tag);
+
+
+                    // badges
+                    var badge = document.createElement("span");
+                    badge.setAttribute("class", "badge badge-pill beauty");
+                    badge.innerHTML = `${data[i].cat_lv1}`;
+
+                    var count_review = document.createElement("span");
+                    count_review.setAttribute("class", "");
+                    count_review.innerHTML = `${data[i].count_review}` + ' รีวิว';
+
+                    // add badges in card txt
+                    div_text.appendChild(badge);
+                    div_text.appendChild(count_review);
+                    // add col2 in row
+                    div_row.appendChild(div_col2);
+                    // add row in div cover
+                    div_card.appendChild(div_row);
+
+                    // add div cover in link cover
+                    a_cover.appendChild(div_card);
+
+                    
+                        var parent = document.getElementById("example_content3");
+                        parent.appendChild(a_cover);
+                    
+                    
+                }
+
+            }
+        }
+            
+
+
+    </script>
+</body>
+
+</html>
